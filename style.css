@@ -23,6 +23,7 @@ nav a{
 margin-left:20px;
 text-decoration:none;
 color:#94a3b8;
+transition:0.3s;
 }
 
 section{
@@ -60,6 +61,15 @@ margin-top:40px;
 
 nav a:hover{
 color:#38bdf8;
+}
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .card{
@@ -126,6 +136,22 @@ i {
 }
 
 .social-icons a {
+    background:#1e293b;
+    color:#38bdf8; /* cor do ícone */
+}
+
+.social-icons a i {
+    color: inherit; /* garante que o ícone siga o link */
+}
+
+.social-icons a:hover {
+    background:#38bdf8;
+}
+
+.social-icons a:hover i {
+    color:#020617; /* cor do ícone no hover */
+}
+.social-icons a {
     display: flex;             /* ESSENCIAL */
     justify-content: center;
     align-items: center;
@@ -148,4 +174,14 @@ i {
 
 .social-icons a {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #38bdf8;
+    color: #020617;
+    padding: 10px 15px;
+    border-radius: 8px;
 }
