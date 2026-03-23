@@ -1,25 +1,31 @@
 // SCROLL SUAVE
-document.querySelector(".nav").addEventListener("click", (e) => {
+const nav = document.querySelector(".nav");
+if (nav) {
+  nav.addEventListener("click", (e) => {
     const link = e.target.closest("a");
 
-    if (!link) return;
-
+    if (!link) return; 
     const id = link.getAttribute("href");
 
     if (id.startsWith("#")) {
-        e.preventDefault();
+      e.preventDefault();
 
-        document.querySelector(id)?.scrollIntoView({
-            behavior: "smooth"
-        });
+      document.querySelector(id)?.scrollIntoView({
+        behavior: "smooth"
+      });
     }
-});
+  });
+}
 
 // COPIAR EMAIL
 const emailBtn = document.querySelector('a[href^="mailto"]');
 
 emailBtn.addEventListener("click", async (e) => {
     e.preventDefault();
+
+    await navigator.clipboard.writeText("kauadavidcorreia@gmail.com");
+    alert("Email copiado! 🚀");
+});
 
     await navigator.clipboard.writeText("kauadavidcorreia@gmail.com");
     alert("Email copiado! 🚀");
